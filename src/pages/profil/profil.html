@@ -1,0 +1,95 @@
+<!--
+  Generated template for the Profil page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<div class="page-wrapper">
+    <ion-header>
+        <ion-navbar>
+            <button ion-button menuToggle>
+                <ion-icon name="menu"></ion-icon>
+            </button>
+            <ion-title>Profil</ion-title>
+            <div class="bar bar-header item-input-inset">
+            </div>
+        </ion-navbar>
+    </ion-header>
+
+    <ion-content padding>
+        <h2>Gérer mon profil</h2>
+        <h3><img src="assets/img/user_infos.png" class="icon_h3" /> Vos informations</h3>
+        <img src="{{ path }}" (click)="openCamera();" id="photo"/>
+        Cliquez sur l'image pour prendre une photo
+        <div class="description-profil">
+            <ion-item>
+                <ion-label color="primary"><p>Nom :</p></ion-label>
+                <ion-input id="lastName" value="{{ lastName }}"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="primary"><p>Prénom :</p></ion-label>
+                <ion-input id="firstName" value="{{ firstName }}"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="primary"><p>Adresse e-mail :</p></ion-label>
+                <ion-input type="email" value="john.doe@example.com"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="primary"><p>Téléphone :</p></ion-label>
+                <ion-input type="tel" value="01 02 03 04 05"></ion-input>
+            </ion-item>
+        </div>
+        <ion-label color="primary"><h3>Je suis :</h3></ion-label>
+        <div class="description-profil">
+            <ion-list radio-group [(ngModel)]="contact_type">
+                <ion-item>
+                    <ion-label>Un particulier</ion-label>
+                    <ion-radio value="part" checked="checked"></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Un professionnel</ion-label>
+                    <ion-radio value="pro"></ion-radio>
+                </ion-item>
+            </ion-list>
+        </div>
+        <h3><img src="assets/img/list.png" class="icon_h3" /> Vos commandes</h3>
+        <ion-list>
+          <ion-item (click)="itemSelected('current_orders');" class="bouton-profil">
+          Commandes en cours
+          </ion-item>
+          <ion-item (click)="itemSelected('old_orders');" class="bouton-profil">
+          Anciennes commandes
+          </ion-item>
+          <ion-item (click)="itemSelected('return_product');" class="bouton-profil">
+          Retourner un produit
+          </ion-item>
+        </ion-list>
+        <h3><img src="assets/img/box.png" class="icon_h3" /> Vos adresses</h3>
+        <div class="description-profil">
+            <ion-item>
+              <ion-label stacked>Adresse principale de livraison</ion-label>
+              <ion-textarea value="45, rue de Lille
+        13400 AUBAGNE"></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-label>Ceci est mon adresse de facturation</ion-label>
+              <ion-checkbox [(ngModel)]="billing_address" checked ></ion-checkbox>
+            </ion-item>
+        </div>
+        <h3><img src="assets/img/parameters.png" class="icon_h3" /> Paramètres du compte</h3>
+        <ion-list>
+            <ion-item (click)="modifyPassword();" class="bouton-profil">
+            Modifier mon mot de passe
+            </ion-item>
+            <ion-item (click)="contactPreference();" class="bouton-profil">
+            Préférences de contact
+            </ion-item>
+            <ion-item (click)="confirmDelete();" class="bouton-profil">
+            Supprimer mon compte
+            </ion-item>
+        </ion-list>
+        <button ion-button round (click)="valideProfil();">Valider</button>
+    </ion-content>
+</div>
+

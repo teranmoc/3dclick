@@ -1,0 +1,30 @@
+<ion-menu [content]="content">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>3DClick</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-grid id="user_div">
+            <ion-row>
+                <img src="{{ path }}" id="menu_photo" />
+            </ion-row>
+            <ion-row>
+                Bienvenue <span class="gras" id="user_name">{{ firstName }} {{ lastName }}</span>
+            </ion-row>
+        </ion-grid>
+        <hr/>
+        <ion-list>
+            <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+                <ion-icon name="{{ p.icon }}"></ion-icon> {{p.title}}
+            </button>
+        </ion-list>
+    </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+
+
+<!--<ion-nav [root]="rootPage"></ion-nav>-->

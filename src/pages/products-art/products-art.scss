@@ -1,0 +1,43 @@
+.products-art-content {
+  max-width: 800px;
+  margin: 0 auto;
+  height: 100%;
+}
+.price{
+  color: red;
+}
+.custom_label {
+	color: green;
+	font-weight: bold;
+}
+.promo_label {
+	color: red;
+	font-weight: bold;
+}
+.objet{
+  min-height: 150px;
+}
+
+.div-categorie{
+  background-color: #DCDCDC;
+  padding: 10px;
+  border-radius: 5px;
+  //color: #ffffff;
+  @media only screen and (max-width: 412px){
+  text-align: center;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+    margin: 0 auto;
+  }
+  img {
+    border: 1px solid #fafafa;
+    min-width: 100px;
+  }
+  .texte{
+    padding-top: 20px;
+    min-width: 200px;
+    .prix{
+      padding-top: 10px;
+    }
+  }
+}

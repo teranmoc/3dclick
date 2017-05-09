@@ -1,0 +1,51 @@
+<!--
+  Generated template for the ReturnProduct page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<div class="page-wrapper">
+	<ion-header>
+
+  <ion-navbar>
+    <ion-title>Retour produit</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<h2>Retourner un produit</h2>
+	<div>
+	Vous pouvez retourner un produit facilement grâce à cette interface. <br/>
+	Note : les objets personnalisés ne peuvent pas être retournés.
+	</div>
+	<div>
+		Sélectionnez la commande : <br>
+		<select ng-model="mySelect" ng-change="refreshList()">
+			<option value="123456">123456</option>
+			<option value="478965">478965</option>
+			<option value="981236">981236</option>
+			<option value="631820">631820</option>
+		</select>
+	</div>
+	<div>
+		Commande n°<span class="gras">{{ order_ref }}</span>
+		<ion-list>
+				<ion-item *ngFor="let product of listProducts">
+						<div class="row commande-layout">
+							<div class="col">
+								<img src="assets/img/{{product.filename}}.png" />
+							</div>
+							<div class="col">
+								{{product.title}}
+							</div>
+							<div class="col">
+								Retourner ce produit
+							</div>
+						</div>
+				</ion-item>
+	</ion-list>
+	</div>
+</ion-content>
+</div>

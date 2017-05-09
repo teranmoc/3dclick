@@ -1,0 +1,68 @@
+<!--
+  Generated template for the Professional page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<div class="page-wrapper">
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Pro</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	<h2>Professionnel</h2>
+	<div class="row">
+		<p>Vous êtes professionnel, 3DClick propose sa solution d'impression en 3D de votre prototype.</p><br/>
+		<p>Pour cela, il suffit de prendre votre dessin ou votre objet en photo, renseignez les différentes informations et nous vous enverrons un devis par mail et sur l'application.</p>
+	</div>
+	<div class="row " id="photo">
+		<img src="{{ path }}" (click)="openCamera();" />
+	</div>
+	<div class="row">
+		<p>Cliquez sur l'appareil photo pour prendre une photo</p>
+	</div>
+	<div class="description-profil">
+		<ion-item>
+			<ion-label color="primary">Type de matériau</ion-label>
+			<ion-select [(ngModel)]="material">
+				<ion-option value="plastic" selected="true">Plastique</ion-option>
+				<ion-option value="wood">Bois</ion-option>
+				<ion-option value="aluminium">Aluminium</ion-option>
+			</ion-select>
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary">Taille de l'objet</ion-label>
+			<ion-input type="number" placeholder="Largeur"></ion-input> cm x
+			<ion-input type="number" placeholder="Longueur"></ion-input> cm x
+			<ion-input type="number" placeholder="Profondeur"></ion-input> cm
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary">Couleur principale</ion-label>
+			<ion-select [(ngModel)]="color">
+				<ion-option value="red" selected="true">Rouge</ion-option>
+				<ion-option value="blue">Bleu</ion-option>
+				<ion-option value="green">Vert</ion-option>
+				<ion-option value="white">Blanc</ion-option>
+				<ion-option value="black">Noir</ion-option>
+				<ion-option value="violet">Violet</ion-option>
+			</ion-select>
+		</ion-item>
+	</div>
+
+	<ion-item>
+		<div class="row">
+			D'autres couleurs ? Si oui indiquez le nombre
+		</div>
+		<div class="row">
+			<ion-input type="number" value="0"></ion-input>
+		</div>
+	</ion-item>
+	<button ion-button full (click)="submit();">Soumettre mon idée</button>
+</ion-content>
+	</div>

@@ -1,0 +1,58 @@
+<!--
+  Generated template for the Valide page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<div class="page-wrapper">
+	<ion-header>
+
+  <ion-navbar>
+    <ion-title>Validation</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<h2>Finalisation de votre commande</h2>
+	<div class="row">
+		<div class="col">
+			Montant du panier : 
+		</div>
+		<div class="col">
+			<span class="gras">{{ price }} € TTC</span>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			Livraison :
+		</div>
+		<div class="col">
+			<span class="gras">{{ delivery_type }}</span>
+		</div>
+	</div>
+	<hr/>
+	<div class="row">
+		<div class="col">
+			Net à payer : 
+		</div>
+		<div class="col">
+			<span class="gras">{{ total_price }} € TTC</span>
+		</div>
+	</div>
+	<div>
+		Cliquez sur le moyen de paiement désiré :
+	</div>
+	<div class="row">
+		<div class="col">
+			Carte bancaire<br/>
+			<img src="assets/img/cb.png" />
+		</div>
+		<div class="col">
+			Paypal<br/>
+			<img src="assets/img/paypal.png" />
+		</div>
+	</div>
+</ion-content>
+	</div>

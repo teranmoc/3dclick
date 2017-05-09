@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "477408586071",
+    "firebase_url": "https://dclick-37ff1.firebaseio.com",
+    "project_id": "dclick-37ff1",
+    "storage_bucket": "dclick-37ff1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:477408586071:android:d8b126622960c604",
+        "android_client_info": {
+          "package_name": "com.company.troisdclick"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "477408586071-civ3k3qtoot88ra7l45qv8b3glqtcop0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdFucN6pNkf1Avcx-HrDu7E8IEM73l_E8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

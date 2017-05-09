@@ -1,0 +1,44 @@
+<div class="contact-content">
+	<ion-header>
+		<ion-navbar>
+			<button ion-button menuToggle>
+				<ion-icon name="menu"></ion-icon>
+			</button>
+			<ion-title>Contact</ion-title>
+		</ion-navbar>
+	</ion-header>
+
+	<ion-content padding>
+		<h2>Contactez nous !</h2>
+		<h4>Particulier ?</h4>
+		<p>Vous pouvez nous contacter pour toute question sur vos commandes ou pour la personnalisation de votre objet !</p>
+		<ion-item>
+			<ion-label color="primary"><p>Votre nom et prénom :</p></ion-label>
+			<ion-input ></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary"><p>Votre adresse e-mail :</p></ion-label>
+			<ion-input type="email" ></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary"><p>Votre numéro :</p></ion-label>
+			<ion-input type="tel" ></ion-input>
+		</ion-item>
+		<ion-label color="primary"><p>Je souhaite :</p></ion-label>
+		<ion-list radio-group [(ngModel)]="contact_type">
+			<ion-item>
+				<ion-label><p>Un contact par mail</p></ion-label>
+				<ion-radio value="mail"></ion-radio>
+			</ion-item>
+			<ion-item>
+				<ion-label><p>Être rappelé à ce numéro</p></ion-label>
+				<ion-radio value="phone"></ion-radio>
+			</ion-item>
+		</ion-list>
+		<button ion-button round (click)="submit('part')">Envoyer</button>
+		<h4>Professionnel ?</h4>
+		<p>N'hésitez pas à nous contacter pour toute question concernant la réalisation de vos prototypes. Vous disposez d'un contact privilégié pour vos demandes (à condition cependant d'être identifié sur l'application).</p>
+		<button ion-button (click)="submit('pro')">Contactez nous</button>
+	</ion-content>
+</div>
+

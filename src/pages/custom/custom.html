@@ -1,0 +1,70 @@
+<!--
+  Generated template for the Custom page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<div class="page-wrapper">
+	<ion-header>
+		<ion-navbar>
+			<ion-title>Personnalisation</ion-title>
+		</ion-navbar>
+	</ion-header>
+
+
+	<ion-content padding ng-controller="MyCtrl">
+		<h2>Personnaliser le produit</h2>
+		<p>Le produit <span class="gras">{{ product.title }}</span> est personnalisable.</p>
+		<div>
+			<img src="assets/img/{{ product.filename }}.png"  class="img-custom-product"/>
+		</div>
+		<div>
+			<div ng-repeat="group in groups">
+				<ion-item class="item-stable"
+						  ng-click="toggleGroup(group)"
+						  ng-class="{active: isGroupShown(group)}">
+					<i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
+			<p>Choisissez la couleur du produit :</p><br/>
+				</ion-item>
+			<ion-grid class="color-picker item-accordion"
+					  ng-repeat="item in group.items"
+					  ng-show="isGroupShown(group)">
+				<ion-row>
+					<ion-col style="background:#FF0000" (tap)="setColor('#FF0000')">&nbsp;</ion-col>
+					<ion-col style="background:#FF8000" (tap)="setColor('#FF8000')">&nbsp;</ion-col>
+					<ion-col style="background:#FFFF00" (tap)="setColor('#FFFF00')">&nbsp;</ion-col>
+					<ion-col style="background:#80FF00" (tap)="setColor('#80FF00')">&nbsp;</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col style="background:#00FF00" (tap)="setColor('#00FF00')">&nbsp;</ion-col>
+					<ion-col style="background:#00FF80" (tap)="setColor('#00FF80')">&nbsp;</ion-col>
+					<ion-col style="background:#00FFFF" (tap)="setColor('#00FFFF')">&nbsp;</ion-col>
+					<ion-col style="background:#0080FF" (tap)="setColor('#0080FF')">&nbsp;</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col style="background:#0000FF" (tap)="setColor('#0000FF')">&nbsp;</ion-col>
+					<ion-col style="background:#7F00FF" (tap)="setColor('#7F00FF')">&nbsp;</ion-col>
+					<ion-col style="background:#FF00FF" (tap)="setColor('#FF00FF')">&nbsp;</ion-col>
+					<ion-col style="background:#FF007F" (tap)="setColor('#FF007F')">&nbsp;</ion-col>
+				</ion-row>
+			</ion-grid>
+			</div>
+		</div>
+		<div>
+			<p>Choisisez la taille du produit :</p><br/>
+			<ion-item>
+				<ion-select>
+					<ion-option value="s">Petite (21 * 25 * 31 cm)</ion-option>
+					<ion-option value="m" selected="true">Moyenne (30 * 38 * 41 cm)</ion-option>
+					<ion-option value="l">Grande (21 * 25 * 31 cm)</ion-option>
+				</ion-select>
+			</ion-item>
+			<p>Couleur choisie : </p><div id="couleur-choisie"></div>
+
+		</div>
+		<div>
+			<button ion-button (click)="buyProduct();">Acheter</button>
+		</div>
+	</ion-content>
+</div>
+

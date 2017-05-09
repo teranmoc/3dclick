@@ -1,0 +1,72 @@
+<div class="page-wrapper">
+	<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Panier</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Votre panier</h2>
+    <div *ngIf="nbItems == 0">
+    	Votre panier est vide pour le moment. <br/>
+		Vous pouvez ajouter des articles à partir du catalogue produits.
+    </div>
+    <div *ngIf="nbItems > 0">
+		<ion-list>
+			<ion-item *ngFor="let product of listProducts">
+				<div class="row">
+					<div class="col" (click)="viewProduct(product)">
+						<img src="assets/img/{{product.filename}}.png" />
+					</div>
+					<div class="col" (click)="viewProduct(product)">
+						<div class="row">
+							{{product.title}}
+						</div>
+						<div class="row">
+							<span class="price">{{product.price}} €</span>
+							<span class="custom_label" *ngIf="product.customized == true"> Article personnalisé</span>
+						</div>
+					</div>
+					<div class="col">
+						<ion-icon name="trash" (click)="deleteProduct(product)"></ion-icon>
+					</div>
+				</div>
+			</ion-item>
+		</ion-list>
+		<hr/>
+		<div class="row">
+			<div class="col">
+				Quantité : <span class="gras">{{ nbItems }}</span>
+			</div>
+			<div class="col">
+				Total : <span class="gras">{{ totalPrice }} €</span>
+			</div>
+		</div>
+		<hr/>
+		<div id="map_canvas" data-tap-disabled="true" style="height: 100 %">
+			Carte
+		</div>
+		<div *ngIf="city != ''">
+			Suivant votre localisation (<span class="gras" id="city_span">{{ city }}</span>), il semble qu'une boutique 3DClick se trouve à proximité.<br/>
+			Il est possible de retirer votre commande en magasin plutôt que par un transporteur.<br/>
+			Il est, cependant, possible de vous la faire livrer à domicile.
+		</div>
+		<div>
+			<ion-list radio-group [(ngModel)]="delivery">
+				<ion-item>
+					<ion-radio value="shop"></ion-radio>
+					<ion-label checked="checked" (click)="setDeliveryMode('shop');">Je souhaite retirer ma commande en magasin</ion-label>
+				</ion-item>
+				<ion-item>
+					<ion-radio value="ship" (click)="setDeliveryMode('ship');"></ion-radio>
+					<ion-label><p>Je souhaite me faire livrer ma commande</p></ion-label>
+				</ion-item>
+			</ion-list>
+		</div>
+		<button ion-button (click)="validateOrder();">Valider ma commande</button>
+    </div>
+</ion-content>
+</div>

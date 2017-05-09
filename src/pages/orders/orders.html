@@ -1,0 +1,73 @@
+<!--
+  Generated template for the Orders page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<div class="page-wrapper">
+	<ion-header>
+
+  <ion-navbar>
+    <ion-title>Commandes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="commande">
+	<h2>Commandes client</h2>
+	<div *ngIf="type == 'current_orders'">
+		Voici vos commandes en cours :
+	</div>
+	<div *ngIf="type == 'old_orders'">
+		Voici vos anciennes commandes de moins de 1 an. <br/>
+		Si vous désirez consulter d'anciennes commandes, veuillez nous contacter.
+	</div>
+		<ion-row>
+			<ion-col col-2>
+				Numéro de commande
+			</ion-col>
+			<ion-col col-2>
+				Date de la commande
+			</ion-col>
+			<ion-col col-2>
+				Montant
+			</ion-col>
+			<ion-col col-2>
+				Nombre d'éléments
+			</ion-col>
+			<ion-col col-2>
+				Status
+			</ion-col>
+			<ion-col col-2>
+				Facture en PDF
+			</ion-col>
+		</ion-row>
+	<div class="commande-layout">
+		<ion-list>
+			<ion-item *ngFor="let order of listOrders">
+				<ion-row>
+					<ion-col col-2>
+						<span class="gras">{{ order.order_ref }}</span>
+					</ion-col>
+					<ion-col col-2>
+						<span class="gras">{{ order.date }}</span>
+					</ion-col>
+					<ion-col col-2>
+						<span class="gras">{{ order.total }} € TTC</span>
+					</ion-col>
+					<ion-col col-2>
+						<span class="gras">{{ order.quantity }} article(s)</span>
+					</ion-col>
+					<ion-col col-2>
+						<span class="gras">{{ order.status }}</span>
+					</ion-col>
+					<ion-col col-2>
+						<img src="assets/img/pdf.png" />
+					</ion-col>
+				</ion-row>
+			</ion-item>
+		</ion-list>
+	</div>
+</ion-content>
+</div>

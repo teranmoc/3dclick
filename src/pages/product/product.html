@@ -1,0 +1,54 @@
+<!--
+  Generated template for the Product page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<div class="page-wrapper">
+	<ion-header>
+		<ion-navbar>
+			<button ion-button menuToggle>
+				<ion-icon name="menu"></ion-icon>
+			</button>
+			<div class="row">
+				<div class="col list list-inset searchbar">
+					<label class="item item-input">
+						<input type="text" placeholder="Rechercher un produit" id="text_search">
+					</label> <ion-icon name="close-circle" (click)="resetSearch(); " class="close-circle"></ion-icon>
+					<button ion-button color="light" class="search-button"><ion-icon name="search"></ion-icon></button>
+				</div>
+				<div class="col panier-profil">
+					<button ion-button icon-right color="light" (click)="goPage('panier');">
+						<ion-icon name="cart"></ion-icon>
+					</button>
+					<button ion-button icon-right color="light" (click)="goPage('profil');">
+						<ion-icon name="contact"></ion-icon>
+					</button>
+				</div>
+			</div>
+		</ion-navbar>
+		<link rel="stylesheet" type="text/css" href="../../assets/icon/ionicons.css">
+	</ion-header>
+	<ion-content padding>
+		<h2><p> {{ category }} - {{ title }}</p></h2>
+		<div>
+			<img src="assets/img/{{ filename }}.png" class="img-product" />
+		</div>
+		<div class="row">
+			<div class="col">
+				<p>Prix : <span class="price">{{ price }} €</span></p>
+			</div>
+			<div class="col">
+				<p><span class="{{ label }}">{{ info }}</span></p>
+			</div>
+		</div>
+		<div class="row">
+			<ion-col col-12><p><i class="ion-ios-star"></i><i class="ion-ios-star"></i><i class="ion-ios-star"></i><i class="ion-ios-star"></i><i class="ion-ios-star"></i></p> </ion-col>
+			<ion-col col-12><button ion-button (click)="buyProduct(true);" *ngIf="label== 'custom_label'">Personnaliser</button></ion-col>
+			<ion-col col-12><br> <button ion-button (click)="buyProduct(false);">{{ text_buy_no_custom }}</button></ion-col>
+		</div>
+		<div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat sapien vel enim sodales egestas. Phasellus pulvinar neque sed pharetra gravida. Suspendisse posuere et nunc eget consectetur. Pellentesque ut nisl laoreet, facilisis urna in, dignissim dui. Duis neque risus, rutrum ut tristique tristique, sollicitudin vel magna. Vivamus vestibulum tempus magna id elementum. Ut tristique vel purus non viverra. Mauris lacinia nibh at sodales varius.</p>
+		</div>
+	</ion-content>
+</div>
